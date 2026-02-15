@@ -1,4 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+const pageTitle = "Página de inicio";
 ---
 
 <html lang="en">
@@ -7,15 +11,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>El Nivel Ocho
-	</title>
+    <title>El Nivel Ocho</title>
   </head>
   <body>
-	<a href="/">Inicio</a>
-    <a href="/about">Sobre mi</a>
-    <a href="/blog">Blog</a>
+	<Navigation />
 
-    <h1>El Nivel Ocho</h1>
+    <h1>{pageTitle}</h1>
 	<p>Divulgación de matemáticas y telecomunicaciones. También de informática e IA.</p>
+
+	<Footer />
   </body>
 </html>
