@@ -1,17 +1,19 @@
 ---
-import Social from "./Social.astro";
+const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <p id="copyrifht">&copy; {currentYear} El Nivel Ocho</p>
 </footer>
 
 <style>
   footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    font-size: 18px;
+    color: #000000;
+    margin-top: auto;
+  }
+
+  #copyrifht {
+    text-align: center;
   }
 </style>

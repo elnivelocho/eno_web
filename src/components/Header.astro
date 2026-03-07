@@ -1,22 +1,42 @@
 ---
-import Menu from "./Menu.astro";
 import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+import { Image } from "astro:assets";
+import logoSVG from "../assets/logo.svg";
 ---
 
 <header>
+  <a href="/" aria-label="Inicio" class="logo-link">
+    <Image
+      src={logoSVG}
+      alt="Logotipo principal"
+      width={200}
+      height={50}
+      class="logo-img"
+    />
+  </a>
   <nav>
-    <div>
-      <ThemeIcon />
-      <Menu />
-    </div>
     <Navigation />
   </nav>
 </header>
 
 <style>
-  div {
+  header {
+    width: 70%;
+    margin: 1rem auto 0rem auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0d0950;
+  }
+
+  .logo-img {
+    height: 2.5rem;
+    width: auto;
   }
 </style>

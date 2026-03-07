@@ -4,9 +4,6 @@ title: "Mi primera publicación en el blog"
 pubDate: 2022-07-01
 description: "Esta es la prima publicación de mi nuevo blog Astro."
 author: "Alumno de Astro"
-image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "El logotipo de Astro sobre un fondo oscuro con un brillo rosado."
 tags: ["astro", "bloguear", "aprender en público"]
 ---
 
@@ -14,12 +11,8 @@ tags: ["astro", "bloguear", "aprender en público"]
 
 ## Lo que he conseguido
 
-1. **Instalación de Astro**: En primer lugar, he creado un nuevo proyecto Astro y configurar mis cuentas en línea.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec finibus nisi. Pellentesque porttitor at lacus sit amet posuere. Proin nunc justo, rutrum at finibus vitae, imperdiet vel massa. Donec dignissim enim ac lacus ultrices, at pretium ipsum vulputate. Nunc eget enim elit. Praesent auctor facilisis mauris. Aenean faucibus lacinia scelerisque. Proin laoreet augue a risus suscipit, id finibus arcu ullamcorper. Fusce eleifend nisi erat, at fermentum velit tincidunt non.
 
-2. **Creación de páginas**: Luego aprendí cómo hacer páginas creando nuevos archivos `.astro` y colocándolos en la carpeta `src/pages/`.
+Nulla facilisi. Cras pellentesque pulvinar massa, nec blandit eros vulputate eget. Nullam convallis mollis augue, at facilisis elit gravida pellentesque. Sed rutrum arcu vitae ex interdum, sit amet hendrerit lacus scelerisque. Curabitur vel dignissim dolor. Maecenas blandit tempor dictum. Proin rhoncus fringilla justo, ac tincidunt enim.
 
-3. **Creación de publicaciones**: ¡Esta es mi primera publicación! ¡Ahora tengo páginas de Astro y publicaciónes en Markdown!
-
-## Próximos pasos
-
-Terminaré el tutorial de Astro, y luego seguiré añadiendo más publicaciones. Mira este espacio para más por venir.
+Ut purus massa, lobortis eu magna ut, consequat condimentum dolor. Praesent nec nibh ut purus egestas dapibus vel eu metus. Vestibulum molestie posuere orci, sit amet rhoncus ligula ultrices ac. Donec vestibulum aliquet elit vitae convallis. Cras nec odio vel nisi eleifend venenatis a eget arcu. Fusce id sapien convallis, hendrerit lectus non, pulvinar dolor. Nulla id nunc tincidunt, laoreet tellus eget, dignissim ex. Etiam lobortis neque porttitor lorem aliquet scelerisque. Duis id tortor ante. Quisque varius turpis tortor, vitae bibendum velit rutrum quis. Duis eu faucibus metus.

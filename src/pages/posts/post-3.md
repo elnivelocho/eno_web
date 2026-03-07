@@ -3,9 +3,6 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
 author: Alumno de Astro
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
-image:
-  url: "https://docs.astro.build/assets/rays.webp"
-  alt: "El logotipo de Astro sobre un fondo oscuro con rayos de colores del arcoíris."
 pubDate: 2022-07-15
 tags: ["astro", "aprender en público", "contratiempos", "comunidad"]
 ---

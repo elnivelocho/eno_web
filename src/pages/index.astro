@@ -1,10 +1,46 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
-const pageTitle = "Página de inicio";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import "@fontsource-variable/inter";
+import "@fontsource/fira-sans/400.css";
+import "@fontsource/fira-sans/700.css";
+
+import { Image } from "astro:assets";
+import bannerImg from "../assets/banner-eno-web.svg";
+
+import "../styles/global.css";
+const { pageTitle } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>El impresionante subtítulo de mi blog</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-</BaseLayout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={ Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <div class="banner-wrapper">
+    <Image src={bannerImg} alt="Banner de la página principal" class="banner-img"/>
+    </div>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
+</html>
+
+<style>
+  .banner-wrapper {
+    padding: 0;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

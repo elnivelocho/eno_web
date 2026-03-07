@@ -2,8 +2,32 @@
 ---
 
 <div id="main-menu" class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
-  <a href="/tags/">Etiquetas</a>
+  <a href="/about/">Sobre mí</a>
 </div>
+
+<style>
+  .nav-links {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: lowercase;
+    color: #000000;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #0d6efd;
+  }
+</style>
