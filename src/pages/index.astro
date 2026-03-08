@@ -63,34 +63,25 @@ const { pageTitle } = Astro.props;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Space between title and subtitle */
-    width: 90%; /* prevent overflow on small screens */
+    gap: 0.5rem;
+    width: 90%;
   }
 
   .banner-title {
     color: black;
     font-family: "Inter Variable", sans-serif;
     font-weight: 700;
-    font-size: 3rem; /* Adjust sizes as needed! */
+    font-size: clamp(1.5rem, 5vw, 4rem);
     margin: 0;
   }
 
   .banner-subtitle {
     color: black;
     font-family: "Inter Variable", sans-serif;
-    font-weight: 400; /* Regular weight */
-    font-size: 1.25rem;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 2vw, 1.5rem);
     margin: 0 auto;
-    max-width: 30%; /* Limit width to force wrapping */
+    max-width: clamp(100px, 35vw, 500px);
     line-height: 1.4;
-  }
-
-  @media (max-width: 850px) {
-    .banner-title {
-      font-size: 1rem; /* Make it smaller on mobile! */
-    }
-    .banner-subtitle {
-      font-size: 0.6rem;
-    }
   }
 </style>
