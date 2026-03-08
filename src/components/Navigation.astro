@@ -1,9 +1,12 @@
 ---
+const pathname = Astro.url.pathname;
 ---
 
 <div id="main-menu" class="nav-links">
-  <a href="/blog/">Blog</a>
-  <a href="/about/">Sobre mí</a>
+  <a href="/blog/" class={pathname.includes("/blog") ? "active" : ""}>Blog</a>
+  <a href="/about/" class={pathname.includes("/about") ? "active" : ""}
+    >Sobre mí</a
+  >
 </div>
 
 <style>
@@ -36,5 +39,9 @@
   .nav-links a:hover,
   .nav-links a:focus {
     color: #0d6efd;
+  }
+
+  .nav-links a.active {
+    font-weight: bold;
   }
 </style>
