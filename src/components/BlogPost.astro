@@ -1,5 +1,141 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, description, pubDate, tags, heroImage } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<article class="post-card">
+  <div class="card-image-placeholder">
+    {heroImage ? <img src={heroImage} alt={title} class="card-img" /> : null}
+  </div>
+  <div class="card-content">
+    <h3 class="post-title"><a href={url}>{title}</a></h3>
+    {
+      pubDate && (
+        <p class="post-date">
+          {new Date(pubDate).toLocaleDateString("es-ES", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
+      )
+    }
+    {description && <p class="post-description">{description}</p>}
+    {
+      tags && (
+        <div class="post-tags">
+          {tags.map((tag: string) => (
+            <a href={`/tags/${tag}`} class="tag">
+              #{tag}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .post-card {
+    background-color: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 200px;
+  }
+
+  .post-card:hover .post-title a {
+    color: #0d6efd;
+  }
+
+  .card-image-placeholder {
+    width: 250px;
+    min-height: 200px; /* altura mínima para el cuadro */
+    flex-shrink: 0;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .post-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .post-title a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .post-title a:hover {
+    color: #0d6efd;
+  }
+
+  .post-date {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0 0 1rem 0;
+  }
+
+  .post-description {
+    color: #4a4a4a;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .tag {
+    background-color: #f1f3f5;
+    color: #495057;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    text-decoration: none; /* Asegurar que no parezcan un enlace normal subrayado */
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tag:hover {
+    background-color: #0d6efd;
+    color: white;
+  }
+
+  @media (max-width: 600px) {
+    .post-card {
+      flex-direction: column;
+    }
+    .card-image-placeholder {
+      width: 100%;
+      height: 200px;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

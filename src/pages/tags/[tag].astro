@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagLayout from "../../layouts/TagLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 export async function getStaticPaths() {
@@ -26,13 +26,29 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Posts etiquetados con {tag}</p>
-  <ul>
+<TagLayout pageTitle={tag}>
+  <div class="post-grid">
     {
       posts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          pubDate={post.frontmatter.pubDate}
+          tags={post.frontmatter.tags}
+          heroImage={post.frontmatter.heroImage}
+        />
       ))
     }
-  </ul>
-</BaseLayout>
+  </div>
+</TagLayout>
+
+<style>
+  .post-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 2rem 0;
+  }
+</style>

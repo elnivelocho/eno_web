@@ -8,13 +8,28 @@ const pageTitle = "blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>La intención es también hacer un blog.</p>
-
-  <ul>
+  <div class="post-grid">
     {
       allPosts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          pubDate={post.frontmatter.pubDate}
+          tags={post.frontmatter.tags}
+          heroImage={post.frontmatter.heroImage}
+        />
       ))
     }
-  </ul>
+  </div>
 </BaseLayout>
+
+<style>
+  .post-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 2rem 0;
+  }
+</style>
