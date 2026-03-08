@@ -18,13 +18,23 @@ const { pageTitle } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={ Astro.generator} />
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body>
     <Header />
     <div class="banner-wrapper">
-    <Image src={bannerImg} alt="Banner de la página principal" class="banner-img"/>
+      <Image
+        src={bannerImg}
+        alt="Banner de la página principal"
+        class="banner-img"
+      />
+      <div class="banner-text-container">
+        <h1 class="banner-title">El Nivel Ocho</h1>
+        <p class="banner-subtitle">
+          Divulgación de matemáticas, telecomunicaciones, informática e IA
+        </p>
+      </div>
     </div>
     <Footer />
     <script>
@@ -35,6 +45,7 @@ const { pageTitle } = Astro.props;
 
 <style>
   .banner-wrapper {
+    position: relative;
     padding: 0;
   }
 
@@ -42,5 +53,44 @@ const { pageTitle } = Astro.props;
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  .banner-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Space between title and subtitle */
+    width: 90%; /* prevent overflow on small screens */
+  }
+
+  .banner-title {
+    color: black;
+    font-family: "Inter Variable", sans-serif;
+    font-weight: 700;
+    font-size: 3rem; /* Adjust sizes as needed! */
+    margin: 0;
+  }
+
+  .banner-subtitle {
+    color: black;
+    font-family: "Inter Variable", sans-serif;
+    font-weight: 400; /* Regular weight */
+    font-size: 1.25rem;
+    margin: 0 auto;
+    max-width: 30%; /* Limit width to force wrapping */
+    line-height: 1.4;
+  }
+
+  @media (max-width: 850px) {
+    .banner-title {
+      font-size: 1rem; /* Make it smaller on mobile! */
+    }
+    .banner-subtitle {
+      font-size: 0.8rem;
+    }
   }
 </style>
