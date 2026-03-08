@@ -1,0 +1,55 @@
+---
+---
+
+<button
+  class="menu"
+  aria-expanded="false"
+  aria-label="Abrir menú de navegación"
+>
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</button>
+
+<style>
+  .menu {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background-color: #0d0950;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 600px) {
+    .menu {
+      display: flex;
+    }
+
+    /* Animación para que la hamburguesa se convierta en una "X" perfecta */
+    .menu[aria-expanded="true"] .line:first-child {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu[aria-expanded="true"] .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu[aria-expanded="true"] .line:last-child {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+</style>

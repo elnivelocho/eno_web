@@ -1,4 +1,5 @@
 ---
+import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 import { Image } from "astro:assets";
 import logoSVG from "../assets/logo.svg";
@@ -17,6 +18,7 @@ import logoSVG from "../assets/logo.svg";
   <nav>
     <Navigation />
   </nav>
+  <Hamburger />
 </header>
 
 <style>
@@ -30,6 +32,8 @@ import logoSVG from "../assets/logo.svg";
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    position: relative;
+    z-index: 1000;
   }
 
   .logo {

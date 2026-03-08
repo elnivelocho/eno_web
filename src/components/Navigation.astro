@@ -22,7 +22,22 @@ const pathname = Astro.url.pathname;
 
   @media (max-width: 600px) {
     .nav-links {
-      justify-content: center;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: rgba(244, 244, 244, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem 0;
+      z-index: 50;
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    .nav-links.active {
+      display: flex;
     }
   }
 
