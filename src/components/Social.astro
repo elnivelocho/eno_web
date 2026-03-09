@@ -1,14 +1,64 @@
 ---
-const { platform, username } = Astro.props;
+const { url, title, user, icon } = Astro.props;
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<article class="social-card">
+  <a href={url} class="card-link">
+    <img
+      src={icon || "/favicon.svg"}
+      alt={`Icono de ${title}`}
+      class="card-icon"
+    />
+
+    <h3>{title}</h3>
+
+    <p class="card-description">{user}</p>
+  </a>
+</article>
 
 <style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
+  .social-card {
+    background-color: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 220px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
     text-decoration: none;
+    color: inherit;
+  }
+
+  .card-icon {
+    object-fit: contain;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin: 0.7rem 0 0.5rem 0;
+    color: #000000;
+  }
+
+  .card-description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    margin: 0;
+  }
+
+  .social-card:hover h3 {
+    color: #0d6efd;
   }
 </style>

@@ -5,7 +5,10 @@ const pathname = Astro.url.pathname;
 <div id="main-menu" class="nav-links">
   <a href="/blog/" class={pathname.includes("/blog") ? "active" : ""}>Blog</a>
   <a href="/about/" class={pathname.includes("/about") ? "active" : ""}
-    >Sobre mí</a
+    >Acerca</a
+  >
+  <a href="/contact/" class={pathname.includes("/contact") ? "active" : ""}
+    >Contacto</a
   >
 </div>
 

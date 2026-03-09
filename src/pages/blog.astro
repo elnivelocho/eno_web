@@ -4,7 +4,6 @@ import BlogPost from "../components/BlogPost.astro";
 const now = new Date();
 function getPublishDateTime(post: any): Date {
   const rawDate = post.frontmatter.pubDate;
-  // Astro parsea pubDate como Date obj automáticamente, hay que sacar la parte de fecha
   const dateStr =
     rawDate instanceof Date
       ? rawDate.toISOString().slice(0, 10)

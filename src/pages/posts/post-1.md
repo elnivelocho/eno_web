@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Mi primera publicación en el blog"
-pubDate: 2026-03-08
-pubTime: "21:30"
-description: "Esta es la primera publicación de mi nuevo blog Astro."
+title: "Harto de no ser blogger"
+pubDate: 2025-03-13
+pubTime: "10:00"
+description: "¿Qué es esto, Aitor? ¿Qué son los niveles? ¿Y por qué ocho niveles?"
 heroImage: "/images/blog/hero_001_2016.svg"
 author: "Aitor Pascual"
-tags: ["eno", "bloguear"]
+tags: ["eno", "canal"]
 ---
 
 ¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
