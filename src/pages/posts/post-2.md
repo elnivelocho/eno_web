@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Mi primera publicación en el blog"
-pubDate: 2026-03-08
+title: "Mi segunda publicación en el blog"
+pubDate: 2026-03-10
 pubTime: "21:30"
-description: "Esta es la primera publicación de mi nuevo blog Astro."
+description: "Esta es la segunda publicación de mi nuevo blog Astro."
 heroImage: "/images/blog/hero_001_2016.svg"
 author: "Aitor Pascual"
 tags: ["eno", "bloguear"]

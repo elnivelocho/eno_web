@@ -1,16 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const allPosts = Object.values(
+const now = new Date();
+function getPublishDateTime(post: any): Date {
+  const rawDate = post.frontmatter.pubDate;
+  // Astro parsea pubDate como Date obj automáticamente, hay que sacar la parte de fecha
+  const dateStr =
+    rawDate instanceof Date
+      ? rawDate.toISOString().slice(0, 10)
+      : String(rawDate).slice(0, 10);
+  const time = post.frontmatter.pubTime ?? "00:00";
+  return new Date(`${dateStr}T${time}:00`);
+}
+const publishedPosts = Object.values(
   import.meta.glob("./posts/*.md", { eager: true }),
-);
+).filter((post: any) => getPublishDateTime(post) <= now);
 const pageTitle = "blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="post-grid">
     {
-      allPosts.map((post: any) => (
+      publishedPosts.map((post: any) => (
         <BlogPost
           url={post.url}
           title={post.frontmatter.title}

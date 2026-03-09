@@ -3,9 +3,19 @@ import TagLayout from "../../layouts/TagLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
 export async function getStaticPaths() {
+  const now = new Date();
+  function getPublishDateTime(post: any): Date {
+    const rawDate = post.frontmatter.pubDate;
+    const dateStr =
+      rawDate instanceof Date
+        ? rawDate.toISOString().slice(0, 10)
+        : String(rawDate).slice(0, 10);
+    const time = post.frontmatter.pubTime ?? "00:00";
+    return new Date(`${dateStr}T${time}:00`);
+  }
   const allPosts = Object.values(
     import.meta.glob("../posts/*.md", { eager: true }),
-  );
+  ).filter((post: any) => getPublishDateTime(post) <= now);
 
   const uniqueTags = [
     ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),

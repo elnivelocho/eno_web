@@ -16,43 +16,11 @@ const identity = {
 
 const skills = ["HTML", "CSS", "JavaScript", "Astro", "Redacción de contenido"];
 
-const happy = true;
-const finished = true;
-const goal = 3;
-
 const skillColor = "crimson";
 
 const pageTitle = "sobre mí";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>He aquí algunos datos sobre mí:</p>
-  <ul>
-    <li>Me llamo {identity.firstName}.</li>
-    <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Dos de mis aficiones son: {identity.hobbies[0]} y{" "}
-          {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>Mis habilidades son:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-
-  {happy && <p>¡Estoy feliz de aprender Astro!</p>}
-
-  {finished && <p>¡He terminado este tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>Mi objetivo es terminar en 3 días.</p>
-    ) : (
-      <p>Mi objetivo no son 3 días.</p>
-    )
-  }
+  <p>Yo, yo, yo. UPVH/EHU.</p>
 </BaseLayout>

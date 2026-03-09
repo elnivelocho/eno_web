@@ -1,49 +1,86 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+
+const pubDateStr =
+  frontmatter.pubDate instanceof Date
+    ? frontmatter.pubDate.toISOString().slice(0, 10)
+    : String(frontmatter.pubDate).slice(0, 10);
+const pubTime = frontmatter.pubTime ?? "00:00";
+const targetDateISO = `${pubDateStr}T${pubTime}:00`;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <header class="article-header">
-    <p class="article-description">{frontmatter.description}</p>
+  <div
+    id="post-container"
+    style="display: none;"
+    data-target-date={targetDateISO}
+  >
+    <header class="article-header">
+      <p class="article-description">{frontmatter.description}</p>
 
-    <div class="article-meta">
-      <span class="article-date">
+      <div class="article-meta">
+        <span class="article-date">
+          {
+            new Date(frontmatter.pubDate).toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+          {
+            frontmatter.pubTime && (
+              <span class="article-time"> · {frontmatter.pubTime}</span>
+            )
+          }
+        </span>
+        <span class="meta-separator">•</span>
+        <span class="article-author">{frontmatter.author}</span>
+      </div>
+
+      <div class="tags">
         {
-          new Date(frontmatter.pubDate).toLocaleDateString("es-ES", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
+          frontmatter.tags.map((tag: string) => (
+            <a class="tag" href={`/tags/${tag}`}>
+              #{tag}
+            </a>
+          ))
         }
-      </span>
-      <span class="meta-separator">•</span>
-      <span class="article-author">{frontmatter.author}</span>
-    </div>
+      </div>
+    </header>
 
-    <div class="tags">
-      {
-        frontmatter.tags.map((tag: string) => (
-          <a class="tag" href={`/tags/${tag}`}>
-            #{tag}
-          </a>
-        ))
-      }
-    </div>
-  </header>
+    <hr class="article-divider" />
 
-  <hr class="article-divider" />
-
-  <article class="post-content">
-    <slot />
-  </article>
+    <article class="post-content">
+      <slot />
+    </article>
+  </div>
 </BaseLayout>
+
+<script>
+  const container = document.getElementById("post-container");
+
+  if (container) {
+    const targetDateStr = container.getAttribute("data-target-date");
+
+    if (targetDateStr) {
+      const publishAt = new Date(targetDateStr).getTime();
+      const now = Date.now();
+
+      if (now >= publishAt) {
+        container.style.display = "block";
+      } else {
+        window.location.replace("/soon");
+      }
+    }
+  }
+</script>
+
 <style>
   a {
     color: #00539f;
   }
 
-  /* ====== DISEÑO DE CABECERA DEL POST ====== */
   .article-header {
     margin-bottom: 2rem;
     padding-top: 2rem;
@@ -115,8 +152,8 @@ const { frontmatter } = Astro.props;
 
   .post-content {
     line-height: 1.8;
-    font-size: 1.125rem;
-    color: #333;
+    font-size: 1rem;
+    color: #000000;
   }
 
   /* Estilos para el texto Markdown inyectado */
@@ -131,8 +168,6 @@ const { frontmatter } = Astro.props;
 
   .post-content :global(h2) {
     font-size: 1.75rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
   }
 
   .post-content :global(h3) {

@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "Próximamente";
+---
+
+<Layout pageTitle={pageTitle}>
+  <div class="coming-soon-container">
+    <div class="coming-soon-card">
+      <span class="emoji">🔒</span>
+      <h2>¡Ups! Demasiado pronto...</h2>
+      <p>
+        Este artículo todavía se está cocinando a fuego lento. No queremos
+        servirlo crudo, ¿verdad?
+      </p>
+      <p class="subtext">
+        Vuelve en la fecha de publicación para descubrir qué hay aquí dentro.
+      </p>
+      <a href="/blog" class="back-link">Volver al blog</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    min-height: 50vh;
+  }
+
+  .coming-soon-card {
+    background-color: white;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+
+  p {
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    background-color: #f1f3f5;
+    color: #495057;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .back-link:hover {
+    background-color: #0d6efd;
+    color: white;
+  }
+</style>
