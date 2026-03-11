@@ -4,5 +4,186 @@ const pageTitle = "acerca";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Yo, yo, yo. UPVH/EHU.</p>
+  <section class="container">
+    <h2>acerca de El Nivel Ocho</h2>
+    <p>
+      El Nivel Ocho nace como un proyecto de divulgación centrado en los campos
+      de conocimiento relacionados con las matemáticas y las tecnologías de la
+      información y comunicación (TICs).
+    </p>
+
+    <p>
+      Dos campos que tiene dos nombres muy <em>fancys</em> que no dan muchas pistas
+      sobre lo terriblemente útiles, <em>elegantes</em> y espeluznantes que pueden
+      llegar a ser; según para quién, claro.
+    </p>
+
+    <div class="collapsible-wrapper">
+      <div class="section-header">
+        <h3>¿de qué voy a hablar?</h3>
+        <button class="toggle-btn" data-target="content-1">mostrar más</button>
+      </div>
+    </div>
+
+    <div id="content-1" class="collapsible-content">
+      <p>
+        Las matemáticas son la rama básica del conocimiento tecnológico, y tiene
+        las característica de tener un lenguaje que a ciertos niveles puede ser
+        tan estético como aterrador. A pesar de que puede ser el trauma de
+        generaciones enteras que se quedan atacadas en la aritmética o el
+        álgebra más básica, ramas como cálculo avanzado, algebra lineal,
+        estadística, o analisis frecuencial, son tan necesarias en la vida de un
+        ingeniero deboto como el aire que respiramos. Son la base de teorías tan
+        ilustres como la Teoría de la Información o Teoría de colas.
+      </p>
+
+      <p>
+        Por otro lado, las TICs son un conjuntos de disciplinas tan grande que a
+        veces cuesta creer que puedan ser agrupadas bajo un mismo concepto.
+        Conecta campos tan diversos como la electrónica, el tratamiento de
+        señales o la informática. Te pueden parecen campos cercanos, pero además
+        de independiente, son los suficiente grandes como para considerarlos
+        diversos.
+      </p>
+
+      <p>
+        Y por todo esto, con el objetivo de acerca el conocimiento técnico, un
+        sentimiento de curiosodad y lógica, y queriendo animar al desarrollo de
+        un críterio crítico, inicio este canal para acercar todo esto a quien
+        esté dispuesto a participar en la conversación de El Nivel Ocho.
+      </p>
+    </div>
+
+    <div class="collapsible-wrapper">
+      <div class="section-header">
+        <h3>¿dónde publico contenido?</h3>
+        <button class="toggle-btn" data-target="content-2">mostrar más</button>
+      </div>
+    </div>
+
+    <div id="content-2" class="collapsible-content">
+      <p>Texto aquí</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>sobre mí</h2>
+    <p>Texto aquí</p>
+  </section>
 </BaseLayout>
+
+<style>
+  .container p,
+  .container h3,
+  .container h2 {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .container p {
+    padding: 0.5rem 0;
+  }
+
+  .toggle-btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #f1f3f5;
+    color: #495057;
+    font-size: 0.85rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .toggle-btn:hover {
+    background-color: #0d6efd;
+    color: white;
+  }
+
+  .collapsible-content {
+    display: none;
+    overflow: hidden;
+  }
+
+  .collapsible-content.is-open {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .container p {
+    padding: 0.5rem 0;
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+  function initToggle() {
+    // Usamos delegación de eventos o selección específica
+    const buttons = document.querySelectorAll(".toggle-btn");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        // Forzamos el tipado a HTMLButtonElement para acceder a dataset
+        const btn = event.currentTarget as HTMLButtonElement;
+        const targetId = btn.getAttribute("data-target");
+
+        if (!targetId) {
+          console.error("Error: Atributo data-target ausente en el botón.");
+          return;
+        }
+
+        const content = document.getElementById(targetId);
+
+        if (content) {
+          const isOpen = content.classList.toggle("is-open");
+          btn.textContent = isOpen ? "mostrar menos" : "mostrar más";
+        } else {
+          console.error(
+            `Error: Elemento con ID "${targetId}" no localizado en el DOM.`,
+          );
+        }
+      });
+    });
+  }
+
+  // Inicialización para cargas normales y navegaciones de Astro
+  initToggle();
+  document.addEventListener("astro:page-load", initToggle);
+</script>

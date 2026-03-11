@@ -7,10 +7,19 @@ const pageTitle = "Contacto";
 <Layout pageTitle={pageTitle}>
   <section class="contact-container">
     <h1>{pageTitle.toLowerCase()}</h1>
-    <p class="joke-text">
-      Mi registro MX apunta directamente a la 192.168.1.27. Es broma. Como no te
-      configure un NAT estático, dudo que tu mensaje llegue.
-    </p>
+
+    <div class="joke-container">
+      <p class="joke-text">
+        Tienes diversas formas de contactar conmigo. Por ejemplo, mi registro MX
+        apunta directamente a la 192.168.1.27. Puedes escribir un email SMTP
+        directamente ahí.
+      </p>
+
+      <p class="joke-text">
+        Es broma. Como no te configure un NAT estático, dudo que tu mensaje
+        llegue.
+      </p>
+    </div>
   </section>
 
   <div class="social-grid">
@@ -23,9 +32,24 @@ const pageTitle = "Contacto";
     <Social
       url="https://www.youtube.com/@ElNivelOcho"
       title="YouTube"
-      user="@ElVivelOcho"
+      user="@ElNivelOcho"
       icon="/social/youtube_red.svg"
     />
+  </div>
+
+  <div id="correo">
+    <h2>correo electrónico</h2>
+    También puedes ponerte en contacto conmigo a través de correo electrónico:
+    <div id="email-container">
+      <a id="email" href="mailto:elnivelocho@gmail.com">elnivelocho@gmail.com</a
+      >
+      <p id="footer-correo">
+        Si me escribes, probablemente te lea. La verdad es que ahora mismo solo
+        recibo correos de mi registrador de dominio, hosters, y publicidad. Si
+        no te leo, es porque esto es un hobby y tengo temporadas en las no le
+        presto mucha atención. ¡No desesperes!
+      </p>
+    </div>
   </div>
 </Layout>
 
@@ -36,8 +60,15 @@ const pageTitle = "Contacto";
 
   .joke-text {
     text-align: center;
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0.5rem 0;
+  }
+
+  .joke-container {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0 2rem;
   }
 
   .social-grid {
@@ -47,5 +78,40 @@ const pageTitle = "Contacto";
     align-items: center;
     gap: 2rem;
     margin: 2rem 0;
+  }
+
+  #correo {
+    text-align: center;
+    margin: 2rem 0;
+    background-color: #ffffff;
+    padding: 1rem 3rem;
+  }
+
+  #footer-correo {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding: 1rem 0;
+  }
+
+  #email-container {
+    padding: 1.5rem 0;
+  }
+
+  #email {
+    display: inline-block;
+    background-color: #f1f3f5;
+    color: #495057;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  #email:hover {
+    background-color: #0d6efd;
+    color: white;
   }
 </style>
