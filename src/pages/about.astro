@@ -7,22 +7,32 @@ const pageTitle = "acerca";
   <section class="container">
     <h2>acerca de El Nivel Ocho</h2>
     <p>
-      El Nivel Ocho es un proyecto de divulgación que tiene como objetivo
-      reflexionar y divulgar los pilares fundamentales detras de las tecnologías
-      actuales. Esos pilares que, a menudo parecen estar metidos dentro de una
-      caja negra, y que son los que permiten la existencia de cualquier
-      desarrollo tecnológico actual.
+      Soy Aitor Pascual, estudiante del Máster de Ingeniería de Telecomunicación
+      en la Escuela de Ingeniería de Bilbao, de la Euskal Herriko Unibertsitatea
+      (EHU); y el que está detrás de El Nivel Ocho.
     </p>
-
     <p>
-      El Nivel Ocho es una plataforma para el estudio y aplicación de la técnica
-      desde la compresión y la practicidad. Pero también desde la elegancia. La
-      ingeniería se entiende como la capacidad de exprimir la lógica y moldearla
-      para resolver exigencias complejas. Y la matemática como una forma
-      elegante de encontrar patrones en el universo en el que vivimos. Este
-      juego entre el medio técnico y el ingeniero puede ser realmente refinado,
-      dando lugar a una forma de arte a través de la experiencia.
+      Al mismo tiempo que estudio el Máster, intento montar una plataforma para
+      la divulgación de la telemática, que es el área de telecomunicaciones que
+      más me ha gustado.
     </p>
+    <p>
+      Durante mis años de carrera, mis referentes siempre fueron canales como
+      los de Grant Sanderson (3blue1brown) o Lemnismath. Es una forma de dar
+      vida e intuición a conceptos matemáticos, informáticos, y cibernéticos.
+    </p>
+    <p>
+      Y mi idea aquí es hacer lo mismo con las redes de telecomunicación. La
+      telemática a menudo para de inexistente. Y cuando no, parece una caja
+      negra que nadie llega a entender del todo. Por tanto, aquí quiero revertir
+      eso quitarle el relleno y explicar cómo funciona Internet de verdad,
+      usando esa misma lógica visual que me enganchó a mí. ¡Espero que lo
+      disfrutes!
+    </p>
+  </section>
+
+  <section class="container">
+    <h2>FAQ</h2>
 
     <div class="collapsible-wrapper">
       <div class="section-header">
@@ -33,30 +43,10 @@ const pageTitle = "acerca";
 
     <div id="content-1" class="collapsible-content">
       <p>
-        Las matemáticas son la rama básica del conocimiento tecnológico, y tiene
-        las característica de tener un lenguaje que a ciertos niveles puede ser
-        tan estético como aterrador. A pesar de que puede ser el trauma de
-        generaciones enteras que se quedan atacadas en la aritmética o el
-        álgebra más básica, ramas como cálculo avanzado, algebra lineal,
-        estadística, o analisis frecuencial, son tan necesarias en la vida de un
-        ingeniero deboto como el aire que respiramos. Son la base de teorías tan
-        ilustres como la Teoría de la Información o Teoría de colas.
-      </p>
-
-      <p>
-        Por otro lado, las TICs son un conjuntos de disciplinas tan grande que a
-        veces cuesta creer que puedan ser agrupadas bajo un mismo concepto.
-        Conecta campos tan diversos como la electrónica, el tratamiento de
-        señales o la informática. Te pueden parecen campos cercanos, pero además
-        de independiente, son los suficiente grandes como para considerarlos
-        diversos.
-      </p>
-
-      <p>
-        Y por todo esto, con el objetivo de acerca el conocimiento técnico, un
-        sentimiento de curiosodad y lógica, y queriendo animar al desarrollo de
-        un críterio crítico, inicio este canal para acercar todo esto a quien
-        esté dispuesto a participar en la conversación de El Nivel Ocho.
+        Principalmente hablaremos de telemática, un área de la ingenieria que
+        combina las telecomunicaciones y la informática. Sin embargo, el
+        objetivo también es hablar de temas relacionados con las matemáticas,
+        las telecomunicaciones, y la informática.
       </p>
     </div>
 
@@ -68,59 +58,76 @@ const pageTitle = "acerca";
     </div>
 
     <div id="content-2" class="collapsible-content">
-      <p>Texto aquí</p>
+      <p>
+        La idea es publicar principalmente en YouTube. Sin embargo, existe la
+        posibilidad de que, accidentalmente, algun clip termine en Reels.
+      </p>
     </div>
-  </section>
-
-  <section class="container">
-    <h2>sobre el autor</h2>
-    <p>Texto aquí</p>
   </section>
 </BaseLayout>
 
 <style>
-  .container p,
-  .container h3,
-  .container h2 {
-    width: fit-content;
-    max-width: 100%;
-  }
-
   .container {
     background-color: #ffffff;
     width: 100%;
     max-width: 1000px;
     margin: 1rem auto;
-    padding: 1rem 3rem;
+    padding: 2.5rem 3rem; /* Increased top/bottom padding */
     border: none;
     border-radius: 0;
     box-sizing: border-box;
+  }
+
+  .container p,
+  .container h3,
+  .container h2 {
+    max-width: 100%;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .container h2 {
+    margin-top: 0;
+    margin-bottom: 2rem; /* Increased margin below title */
+    color: #111827;
+    font-size: 1.75rem;
+    font-weight: 700;
   }
 
   .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     margin-bottom: 1rem;
   }
 
   h3 {
     margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
   }
 
   .container p {
-    padding: 0.5rem 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .container p:last-child {
+    margin-bottom: 0;
   }
 
   .toggle-btn {
     appearance: none;
     border: none;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #f1f3f5;
     color: #495057;
     font-size: 0.85rem;
-    padding: 0.4rem 1.2rem;
+    padding: 0.5rem 1.25rem; /* Slightly more padding vertically */
     border-radius: 100px;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -134,27 +141,34 @@ const pageTitle = "acerca";
   .collapsible-content {
     display: none;
     overflow: hidden;
+    padding: 0.5rem 0 1rem 0;
   }
 
   .collapsible-content.is-open {
     display: block;
-    animation: fadeIn 0.3s ease-out;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-5px);
+  @media (max-width: 768px) {
+    .container {
+      padding: 2rem 1.5rem; /* Increased vertical padding for mobile too */
+      margin: 1rem 0;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  .container p {
-    padding: 0.5rem 0;
-    line-height: 1.6;
+    .container h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .toggle-btn {
+      width: auto; /* Not full width */
+      padding: 0.75rem 1.5rem; /* Taller button for mobile */
+    }
   }
 </style>
 

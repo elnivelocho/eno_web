@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Mi segunda publicación en el blog"
-pubDate: 2026-04-10
+pubDate: 2026-05-10
 pubTime: "21:30"
 description: "Esta es la segunda publicación de mi nuevo blog Astro."
 heroImage: "/images/blog/hero_001_2016.svg"
