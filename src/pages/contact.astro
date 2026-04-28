@@ -124,24 +124,20 @@ const pageTitle = "contacto";
     line-height: 1.6;
   }
 
-  /* Terminal Light Style */
+  /* Terminal Dark Style */
   .terminal-container {
     max-width: 650px;
     margin: 0 auto;
-    background: #f9fafb; /* Slightly muted background */
+    background: #111827;
     border-radius: 12px;
-    box-shadow:
-      0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     overflow: hidden;
     font-family: "Fira Code", monospace;
   }
 
   .terminal-header {
-    background: #e5e7eb; /* Muted header */
-    border-bottom: 1px solid #d1d5db;
-    padding: 10px 16px;
+    background: #1f2937;
+    padding: 12px 16px;
     display: flex;
     align-items: center;
     position: relative;
@@ -160,17 +156,17 @@ const pageTitle = "contacto";
   }
 
   .btn-red {
-    background: #ff5f56;
+    background: #ef4444;
   }
   .btn-yellow {
-    background: #ffbd2e;
+    background: #f59e0b;
   }
   .btn-green {
-    background: #27c93f;
+    background: #10b981;
   }
 
   .terminal-title {
-    color: #6b7280;
+    color: #9ca3af;
     font-size: 0.75rem;
     position: absolute;
     width: 100%;
@@ -182,21 +178,21 @@ const pageTitle = "contacto";
 
   .terminal-body {
     padding: 24px;
-    color: #374151;
+    color: #f3f4f6;
     font-size: 0.875rem;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   .line {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .prompt {
-    color: #059669;
+    color: #34d399;
     font-weight: bold;
     margin-right: 8px;
   }
   .response {
-    color: #2563eb;
+    color: #fde047;
     padding-left: 20px;
   }
 
@@ -204,7 +200,7 @@ const pageTitle = "contacto";
     display: inline-block;
     width: 8px;
     height: 15px;
-    background: #374151;
+    background: #f3f4f6;
     margin-left: 4px;
     animation: blink 1s step-end infinite;
   }
@@ -248,7 +244,7 @@ const pageTitle = "contacto";
     background-color: #f3f4f6;
     color: #1f2937;
     font-size: 1rem;
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 9999px;
     font-weight: 500;
     text-decoration: none;
@@ -276,8 +272,12 @@ const pageTitle = "contacto";
       margin: 1rem 0;
     }
 
-    h1 {
+    .container h1 {
       font-size: 2rem;
+    }
+
+    .container p {
+      font-size: 0.9375rem;
     }
 
     .terminal-container {
@@ -285,8 +285,17 @@ const pageTitle = "contacto";
     }
 
     .terminal-body {
-      padding: 16px;
-      font-size: 0.8rem;
+      padding: 14px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .line {
+      margin-bottom: 6px;
+    }
+
+    .response {
+      padding-left: 12px;
     }
 
     .social-grid {

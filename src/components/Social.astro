@@ -35,7 +35,7 @@ const { url, title, user, icon } = Astro.props;
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0;
+    padding: 0 0 2rem 0;
     text-decoration: none;
     color: inherit;
   }
@@ -63,12 +63,12 @@ const { url, title, user, icon } = Astro.props;
 
   @media (max-width: 768px) {
     .social-card {
-      min-height: 140px;
+      min-height: 120px;
       max-width: 130px;
     }
 
     .card-link {
-      padding: 1rem;
+      padding: 0.75rem;
     }
 
     h3 {
