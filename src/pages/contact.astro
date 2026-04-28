@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Social from "../components/Social.astro";
-const pageTitle = "Contacto";
+const pageTitle = "contacto";
 ---
 
 <Layout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+
   <section class="contact-hero">
-    <h1>{pageTitle.toLowerCase()}</h1>
     <p class="hero-subtitle">
       ¿Tienes alguna duda, propuesta o simplemente quieres saludar?
     </p>
@@ -40,7 +41,7 @@ const pageTitle = "Contacto";
     </div>
   </section>
 
-  <section class="social-section">
+  <section class="container social-section">
     <h2>redes sociales</h2>
     <div class="social-grid">
       <Social
@@ -58,9 +59,11 @@ const pageTitle = "Contacto";
     </div>
   </section>
 
-  <div id="correo">
+  <section class="container email-section">
     <h2>correo electrónico</h2>
-    También puedes ponerte en contacto conmigo a través de correo electrónico:
+    <p>
+      También puedes ponerte en contacto conmigo a través de correo electrónico:
+    </p>
     <div id="email-container">
       <a id="email" href="mailto:elnivelocho@gmail.com">elnivelocho@gmail.com</a
       >
@@ -71,39 +74,74 @@ const pageTitle = "Contacto";
         presto mucha atención. ¡No desesperes!
       </p>
     </div>
-  </div>
+  </section>
 </Layout>
 
 <style>
+  .container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 2.5rem 3rem;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .contact-hero {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
+    padding: 0 3rem;
+    box-sizing: border-box;
+  }
+
   h1 {
+    margin-bottom: 2rem;
+  }
+
+  .container p,
+  .container h2 {
+    max-width: 100%;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .container h2 {
     text-align: center;
-    margin-bottom: 0.5rem;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
   }
 
   .hero-subtitle {
     text-align: center;
-    color: #6c757d;
-    margin-bottom: 2rem;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
   }
 
-  .contact-hero {
-    margin-bottom: 4rem;
-  }
-
-  /* Terminal Style */
+  /* Terminal Light Style */
   .terminal-container {
     max-width: 650px;
     margin: 0 auto;
-    background: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: #f9fafb; /* Slightly muted background */
+    border-radius: 12px;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
     overflow: hidden;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Fira Code", monospace;
   }
 
   .terminal-header {
-    background: #333;
-    padding: 10px 15px;
+    background: #e5e7eb; /* Muted header */
+    border-bottom: 1px solid #d1d5db;
+    padding: 10px 16px;
     display: flex;
     align-items: center;
     position: relative;
@@ -112,6 +150,7 @@ const pageTitle = "Contacto";
   .terminal-buttons {
     display: flex;
     gap: 8px;
+    z-index: 2;
   }
 
   .terminal-buttons span {
@@ -131,37 +170,42 @@ const pageTitle = "Contacto";
   }
 
   .terminal-title {
-    color: #999;
-    font-size: 12px;
+    color: #6b7280;
+    font-size: 0.75rem;
     position: absolute;
     width: 100%;
     text-align: center;
     left: 0;
     pointer-events: none;
+    font-weight: 500;
   }
 
   .terminal-body {
-    padding: 20px;
-    color: #f8f8f2;
-    font-size: 14px;
-    line-height: 1.6;
+    padding: 24px;
+    color: #374151;
+    font-size: 0.875rem;
+    line-height: 1.7;
   }
 
   .line {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .prompt {
-    color: #50fa7b;
+    color: #059669;
     font-weight: bold;
+    margin-right: 8px;
   }
   .response {
-    color: #f1fa8c;
-    padding-left: 15px;
+    color: #2563eb;
+    padding-left: 20px;
   }
 
   .cursor {
     display: inline-block;
     width: 8px;
+    height: 15px;
+    background: #374151;
+    margin-left: 4px;
     animation: blink 1s step-end infinite;
   }
 
@@ -176,35 +220,22 @@ const pageTitle = "Contacto";
   }
 
   /* Social Section */
-  .social-section {
-    margin-bottom: 4rem;
-  }
-
-  .social-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
   .social-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    margin-top: 1rem;
   }
 
   /* Email Section */
-  #correo {
+  .email-section {
     text-align: center;
-    margin: 2rem 0;
-    background-color: #ffffff;
-    padding: 1rem 3rem;
   }
 
-  #footer-correo {
-    font-style: italic;
-    font-size: 0.8rem;
-    color: #6c757d;
-    padding: 1rem 0;
+  .email-section p {
+    color: #374151;
+    line-height: 1.6;
   }
 
   #email-container {
@@ -212,17 +243,16 @@ const pageTitle = "Contacto";
   }
 
   #email {
-    display: inline-block;
-    background-color: #f1f3f5;
-    color: #495057;
+    display: inline-flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    color: #1f2937;
     font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 100px;
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
     font-weight: 500;
     text-decoration: none;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   #email:hover {
@@ -230,9 +260,42 @@ const pageTitle = "Contacto";
     color: white;
   }
 
-  @media (max-width: 600px) {
+  #footer-correo {
+    max-width: 600px;
+    margin: 1.5rem auto 0 auto;
+    font-style: italic;
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 2rem 1.5rem;
+      margin: 1rem 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
     .terminal-container {
-      margin: 0 10px;
+      margin: 0;
+    }
+
+    .terminal-body {
+      padding: 16px;
+      font-size: 0.8rem;
+    }
+
+    .social-grid {
+      gap: 1rem;
+    }
+
+    #email {
+      width: auto;
+      justify-content: center;
     }
   }
 </style>

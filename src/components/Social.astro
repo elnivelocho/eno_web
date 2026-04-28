@@ -18,7 +18,7 @@ const { url, title, user, icon } = Astro.props;
 
 <style>
   .social-card {
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     border-radius: 0;
     overflow: hidden;
     display: flex;
@@ -54,11 +54,35 @@ const { url, title, user, icon } = Astro.props;
     font-size: 0.8rem;
     color: #6c757d;
     text-align: center;
-    padding: 0 0 1rem 0;
     margin: 0;
   }
 
   .social-card:hover h3 {
     color: #0d6efd;
+  }
+
+  @media (max-width: 768px) {
+    .social-card {
+      min-height: 140px;
+      max-width: 130px;
+    }
+
+    .card-link {
+      padding: 1rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0.2rem 0;
+    }
+
+    .card-description {
+      font-size: 0.7rem;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+    }
   }
 </style>

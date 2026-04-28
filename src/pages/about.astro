@@ -34,34 +34,40 @@ const pageTitle = "acerca";
   <section class="container">
     <h2>FAQ</h2>
 
-    <div class="collapsible-wrapper">
-      <div class="section-header">
-        <h3>¿de qué voy a hablar?</h3>
-        <button class="toggle-btn" data-target="content-1">mostrar más</button>
+    <div class="faq-item">
+      <div class="collapsible-wrapper">
+        <div class="section-header">
+          <h3>¿de qué voy a hablar?</h3>
+          <button class="toggle-btn" data-target="content-1">mostrar más</button
+          >
+        </div>
+      </div>
+
+      <div id="content-1" class="collapsible-content">
+        <p>
+          Principalmente hablaremos de telemática, un área de la ingenieria que
+          combina las telecomunicaciones y la informática. Sin embargo, el
+          objetivo también es hablar de temas relacionados con las matemáticas,
+          las telecomunicaciones, y la informática.
+        </p>
       </div>
     </div>
 
-    <div id="content-1" class="collapsible-content">
-      <p>
-        Principalmente hablaremos de telemática, un área de la ingenieria que
-        combina las telecomunicaciones y la informática. Sin embargo, el
-        objetivo también es hablar de temas relacionados con las matemáticas,
-        las telecomunicaciones, y la informática.
-      </p>
-    </div>
-
-    <div class="collapsible-wrapper">
-      <div class="section-header">
-        <h3>¿dónde publico contenido?</h3>
-        <button class="toggle-btn" data-target="content-2">mostrar más</button>
+    <div class="faq-item">
+      <div class="collapsible-wrapper">
+        <div class="section-header">
+          <h3>¿dónde publico contenido?</h3>
+          <button class="toggle-btn" data-target="content-2">mostrar más</button
+          >
+        </div>
       </div>
-    </div>
 
-    <div id="content-2" class="collapsible-content">
-      <p>
-        La idea es publicar principalmente en YouTube. Sin embargo, existe la
-        posibilidad de que, accidentalmente, algun clip termine en Reels.
-      </p>
+      <div id="content-2" class="collapsible-content">
+        <p>
+          La idea es publicar principalmente en YouTube. Sin embargo, existe la
+          posibilidad de que, accidentalmente, algun clip termine en Reels.
+        </p>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -94,12 +100,23 @@ const pageTitle = "acerca";
     font-weight: 700;
   }
 
+  .faq-item {
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.75rem;
+  }
+
+  .faq-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
   .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced to bring answer closer */
   }
 
   h3 {
@@ -115,6 +132,12 @@ const pageTitle = "acerca";
 
   .container p:last-child {
     margin-bottom: 0;
+  }
+
+  .collapsible-content p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #4b5563;
   }
 
   .toggle-btn {
@@ -141,7 +164,7 @@ const pageTitle = "acerca";
   .collapsible-content {
     display: none;
     overflow: hidden;
-    padding: 0.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
   }
 
   .collapsible-content.is-open {
